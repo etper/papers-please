@@ -71,27 +71,7 @@
 
 	# UI
 	
-		#1. Boot / Startup UI
-#Black Screen Intro
-#
-#Elements:
-#
-#pitch black screen
-#blinking cursor maybe
-#voiceover subtitles
-#faint CRT startup hum
-#
-#Text:
-#
-#system boot text
-#corrupted date
-#impossible calendar values
-#
-#Example:
-#
-#FEBRUARY 31ST
-#MONTH 13
-#DAY INDEX: 442
+		#tasks
 #2. Government Desktop UI
 #
 #Main gameplay screen.
@@ -1333,3 +1313,4 @@
 		# make sure that morse codes are correctly working for all days
 		# make sure that quotas increase each day 5,10,15
 		# make sure finale is done right according to plot
+		# in the intro boot sequence it does not clear the pc lines correctly

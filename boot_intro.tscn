@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bpjssleoox245"]
+
+[ext_resource type="Script" uid="uid://c5iwwbplkit56" path="res://boot_intro.gd" id="1_5ox60"]
+
+[node name="BootIntro" type="Control" unique_id=71999399]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5ox60")
+
+[node name="Background" type="ColorRect" parent="." unique_id=402479661]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="BootText" type="RichTextLabel" parent="." unique_id=851415936]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -0.5
+offset_right = 1152.0
+offset_bottom = 432.0
+grow_horizontal = 2
+
+[node name="Cursor" type="Label" parent="." unique_id=25936596]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "_"
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=150735473]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true

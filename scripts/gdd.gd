@@ -71,33 +71,7 @@
 
 	# GAMEPLAY
 	
-		#1. Brain Scan Review
-#
-#Primary mechanic.
-#
-#Citizen file contains:
-#
-#Emotional percentages
-#Anxiety
-#Aggression
-#Grief
-#Obsession
-#Empathy
-#Dissociation
-#Dream symbols
-#Thought fragments
-#Risk score
-#Behavioral history
-#Medication compliance
-#Memory stability
-#
-#Player compares values against daily rules.
-#
-#Example:
-#
-#Anxiety above 40% → reject
-#Bell symbol present → reject
-#Excessive nostalgia → reject
+		#tasks
 #2. Daily Rule Changes
 #
 #Rules mutate each day.
@@ -1606,3 +1580,8 @@
 #safe
 #fake
 #horrifying in hindsight
+
+	# AFTER 
+	
+		# icons for dream symbols instead
+		# rules being different app than brain scan panel

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://eiq483thauuv"]
+
+[node name="CognitiveDriftPopup" type="Node2D" unique_id=1122539185]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=851511247]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0, 0, 0.5058824)
+
+[node name="Label" type="Label" parent="." unique_id=1843878667]
+offset_left = 208.0
+offset_top = 256.0
+offset_right = 971.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 42
+text = "AUDITOR COGNITIVE DRIFT DETECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=363588386]
+offset_left = 208.0
+offset_top = 312.0
+offset_right = 971.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 42
+text = "SELF ASSESSMENT REQUIRED"
+horizontal_alignment = 1
+vertical_alignment = 1

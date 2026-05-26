@@ -11,6 +11,8 @@ var current_day := 1
 var needs_injection := false
 var compliance := 100
 
+var cognitive_drift := false
+
 func _ready():
 
 	randomize()
@@ -82,7 +84,7 @@ func finish_case():
 	print("Processed: ", processed)
 
 	if mistakes >= 3:
-		print("GAME OVER")
+		trigger_cognitive_drift()
 		return
 
 	if processed >= quota:
@@ -93,6 +95,10 @@ func finish_case():
 	show_injection_ui()
 
 func _on_approve_button_pressed():
+
+	if cognitive_drift:
+		threat_confirmed()
+		return
 
 	if needs_injection:
 		print("INJECTION REQUIRED")
@@ -158,3 +164,80 @@ func show_injection_ui():
 
 func _on_inject_button_pressed() -> void:
 	inject_drug()
+
+func trigger_cognitive_drift():
+
+	cognitive_drift = true
+
+	disable_normal_ui()
+
+	show_drift_popup()
+
+	await get_tree().create_timer(2.5).timeout
+
+	start_self_audit()
+
+func disable_normal_ui():
+
+	$UI/BrainScanPanel.visible = false
+	$UI/InjectButton.visible = false
+
+func generate_self_audit() -> Citizen:
+
+	var c = Citizen.new()
+
+	c.citizen_id = "SUBJECT-YOU"
+
+	c.anxiety = 99
+	c.aggression = 91
+	c.grief = 100
+
+	c.dream_symbols = [
+		"Bell",
+		"Eye",
+		"Blue Triangle"
+	]
+
+	c.risk_score = 100
+
+	return c
+
+func start_self_audit():
+
+	current_citizen = generate_self_audit()
+
+	display_citizen(current_citizen)
+
+	$UI/BrainScanPanel.visible = true
+
+func threat_confirmed():
+
+	$UI/BrainScanPanel.visible = false
+
+	print("THREAT CONFIRMED")
+
+	await get_tree().create_timer(2.0).timeout
+
+	restart_cycle()
+
+func restart_cycle():
+
+	mistakes = 0
+	processed = 0
+	compliance = 100
+
+	current_day = 1
+
+	cognitive_drift = false
+
+	$RuleManager.set_day(current_day)
+
+	current_citizen = generate_random_citizen()
+
+	display_citizen(current_citizen)
+
+	$UI/BrainScanPanel.visible = true
+
+func show_drift_popup():
+
+	print("AUDITOR COGNITIVE DRIFT DETECTED")

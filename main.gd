@@ -8,6 +8,9 @@ var quota := 5
 
 var current_day := 1
 
+var needs_injection := false
+var compliance := 100
+
 func _ready():
 	randomize()
 
@@ -78,11 +81,14 @@ func finish_case():
 		print("DAY COMPLETE")
 		return
 
-	current_citizen = generate_random_citizen()
-
-	display_citizen(current_citizen)
+	needs_injection = true
+	show_injection_ui()
 
 func _on_approve_button_pressed():
+
+	if needs_injection:
+		print("INJECTION REQUIRED")
+		return
 
 	var should_reject = \
 		$RuleManager.should_reject(current_citizen)
@@ -102,6 +108,10 @@ func _on_approve_button_pressed():
 
 func _on_reject_button_pressed():
 
+	if needs_injection:
+		print("INJECTION REQUIRED")
+		return
+
 	var should_reject = \
 		$RuleManager.should_reject(current_citizen)
 
@@ -117,3 +127,26 @@ func _on_reject_button_pressed():
 		print("Mistakes: ", mistakes)
 
 	finish_case()
+
+func inject_drug():
+
+	needs_injection = false
+
+	compliance = 100
+
+	print("COMPLIANCE RESTORED")
+
+	current_citizen = generate_random_citizen()
+
+	display_citizen(current_citizen)
+	
+	$UI/BrainScanPanel.visible = true
+	$UI/InjectButton.visible = false
+
+func show_injection_ui():
+
+	$UI/BrainScanPanel.visible = false
+	$UI/InjectButton.visible = true
+
+func _on_inject_button_pressed() -> void:
+	inject_drug()

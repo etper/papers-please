@@ -78,8 +78,17 @@ offset_right = 149.0
 offset_bottom = 303.0
 text = "REJECT"
 
+[node name="InjectButton" type="Button" parent="UI" unique_id=1443240806]
+visible = false
+offset_left = 528.0
+offset_top = 520.0
+offset_right = 587.0
+offset_bottom = 551.0
+text = "INJECT"
+
 [node name="RuleManager" type="Node" parent="." unique_id=320138722]
 script = ExtResource("2_0xm2m")
 
 [connection signal="pressed" from="UI/BrainScanPanel/ApproveButton" to="." method="_on_approve_button_pressed"]
 [connection signal="pressed" from="UI/BrainScanPanel/RejectButton" to="." method="_on_reject_button_pressed"]
+[connection signal="pressed" from="UI/InjectButton" to="." method="_on_inject_button_pressed"]

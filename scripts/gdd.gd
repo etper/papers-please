@@ -72,16 +72,6 @@
 	# GAMEPLAY
 	
 		#tasks
-#Day 3:
-#Randomized forbidden emotions
-#Thresholds hidden partially
-#
-#Can escalate into:
-#
-#Contradictory rules
-#Missing documents
-#Corrupted directives
-#Rules changing mid-shift
 #3. Drug Injection Mechanic
 #
 #To continue processing citizens:
@@ -1574,3 +1564,4 @@
 		# rules being different app than brain scan panel
 		# make sure that hidden instructions are not overriding the rules for the days
 		# make sure the rules for the days are correct with plan
+		# perhaps inject every citizen is too much?

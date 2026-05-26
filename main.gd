@@ -47,25 +47,27 @@ func generate_random_citizen() -> Citizen:
 
 func display_citizen(citizen: Citizen):
 
-	$UI/BrainScanPanel/CitizenIDLabel.text = citizen.citizen_id
+	var window = $UI/BrainScanWindow
 
-	$UI/BrainScanPanel/AnxietyLabel.text = \
+	window.get_node("CitizenIDLabel").text = citizen.citizen_id
+
+	window.get_node("AnxietyLabel").text = \
 		"Anxiety: " + str(citizen.anxiety) + "%"
 
-	$UI/BrainScanPanel/AggressionLabel.text = \
+	window.get_node("AggressionLabel").text = \
 		"Aggression: " + str(citizen.aggression) + "%"
 
-	$UI/BrainScanPanel/GriefLabel.text = \
+	window.get_node("GriefLabel").text = \
 		"Grief: " + str(citizen.grief) + "%"
 
-	$UI/BrainScanPanel/DreamSymbolsLabel.text = \
+	window.get_node("DreamSymbolsLabel").text = \
 		"Dream Symbols: " + ", ".join(citizen.dream_symbols)
 
-	$UI/BrainScanPanel/RiskLabel.text = \
+	window.get_node("RiskLabel").text = \
 		"Risk: " + str(citizen.risk_score)
-	
-	$UI/BrainScanPanel/RulesLabel.text = \
-	$RuleManager.get_rules_text()
+
+	window.get_node("RulesLabel").text = \
+		$RuleManager.get_rules_text()
 
 func finish_case():
 
@@ -140,12 +142,12 @@ func inject_drug():
 
 	display_citizen(current_citizen)
 	
-	$UI/BrainScanPanel.visible = true
+	$UI/BrainScanWindow.visible = true
 	$UI/InjectButton.visible = false
 
 func show_injection_ui():
 
-	$UI/BrainScanPanel.visible = false
+	$UI/BrainScanWindow.visible = false
 	$UI/InjectButton.visible = true
 
 func _on_inject_button_pressed() -> void:

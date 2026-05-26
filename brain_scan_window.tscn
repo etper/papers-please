@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://de70f7ja33lub"]
+
+[node name="BrainScanPanel" type="Window" unique_id=1739591962]
+oversampling_override = 1.0
+position = Vector2i(100, 100)
+
+[node name="CitizenIDLabel" type="Label" parent="." unique_id=488262268]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SUBJECT-204"
+
+[node name="AnxietyLabel" type="Label" parent="." unique_id=1975589924]
+offset_top = 64.0
+offset_right = 99.0
+offset_bottom = 87.0
+text = "Anxiety: 53%"
+
+[node name="AggressionLabel" type="Label" parent="." unique_id=1331663868]
+offset_top = 88.0
+offset_right = 126.0
+offset_bottom = 111.0
+text = "Aggression: 21%"
+
+[node name="GriefLabel" type="Label" parent="." unique_id=1286191274]
+offset_top = 112.0
+offset_right = 79.0
+offset_bottom = 135.0
+text = "Grief: 72%"
+
+[node name="DreamSymbolsLabel" type="Label" parent="." unique_id=1085141326]
+offset_top = 160.0
+offset_right = 126.0
+offset_bottom = 209.0
+text = "Dream Symbols:
+Bell, Eye"
+
+[node name="RiskLabel" type="Label" parent="." unique_id=1817871212]
+offset_top = 232.0
+offset_right = 59.0
+offset_bottom = 255.0
+text = "Risk: 66"
+
+[node name="RulesLabel" type="Label" parent="." unique_id=80424585]
+offset_left = 320.0
+offset_right = 379.0
+offset_bottom = 23.0
+text = "Risk: 66"
+
+[node name="ApproveButton" type="Button" parent="." unique_id=1170562211]
+offset_top = 272.0
+offset_right = 80.0
+offset_bottom = 303.0
+text = "APPROVE"
+
+[node name="RejectButton" type="Button" parent="." unique_id=1220845602]
+offset_left = 88.0
+offset_top = 272.0
+offset_right = 149.0
+offset_bottom = 303.0
+text = "REJECT"

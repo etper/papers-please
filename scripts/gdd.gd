@@ -72,25 +72,6 @@
 	# GAMEPLAY
 	
 		#tasks
-#3. Drug Injection Mechanic
-#
-#To continue processing citizens:
-#
-#Player exits monitor view
-#Clicks syringe/drug on desk
-#Character injects themselves
-#“COMPLIANCE RESTORED”
-#
-#Potential mechanics:
-#
-#Delay injection too long:
-#screen distortion
-#audio hallucinations
-#hidden memories appear
-#Skip injection:
-#hidden dialogue
-#altered endings
-#harder gameplay
 #4. Multi-Window Desktop UI
 #
 #Old government OS.

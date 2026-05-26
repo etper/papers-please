@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c2nm6ga3jjhqp"]
+
+[ext_resource type="AudioStream" uid="uid://c23rb7c377i47" path="res://sfx/static.mp3" id="1_7xq1n"]
+[ext_resource type="Script" uid="uid://dw6vpx8sqriyw" path="res://morse_intro.gd" id="1_pmmf7"]
+[ext_resource type="AudioStream" uid="uid://cxa01lf53kwg" path="res://sfx/morse beep.mp3" id="2_pmmf7"]
+
+[node name="MorseIntro" type="Control" unique_id=1864525078]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pmmf7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=902658739]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="RecLabel" type="Label" parent="." unique_id=1348531599]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 145.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.75338984, 2.382472e-06, 5.7756904e-07, 1)
+theme_override_font_sizes/font_size = 44
+text = "REC"
+
+[node name="StaticPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1641757039]
+stream = ExtResource("1_7xq1n")
+volume_db = -20.0
+parameters/looping = true
+
+[node name="BeepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=117029256]
+stream = ExtResource("2_pmmf7")
+
+[node name="BlinkTimer" type="Timer" parent="." unique_id=1695216433]

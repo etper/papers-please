@@ -72,78 +72,6 @@
 	# GAMEPLAY
 	
 		#tasks
-#4. Multi-Window Desktop UI
-#
-#Old government OS.
-#
-#Windows include:
-#
-#Brain scan viewer
-#Dream archive
-#Daily regulations
-#Citizen history
-#Messaging terminal
-#System alerts
-#Clock/date
-#Quota tracker
-#
-#Mechanics:
-#
-#Drag windows around
-#Minimize/maximize
-#Windows overlap under pressure
-#Corrupted popups interrupt work
-#5. Dream Symbol Matching
-#
-#Citizens report dreams.
-#
-#Player compares symbols against approved/forbidden list.
-#
-#Examples:
-#
-#Bell
-#Red staircase
-#Ocean
-#Eye
-#Teeth
-#Door without handle
-#Blue triangle
-#
-#Late-game:
-#
-#symbols begin matching YOUR memories
-#forbidden symbols appear in your own hidden files
-#6. Hidden Morse Code System
-#
-#Before each day:
-#
-#black screen
-#audio static
-#faint morse code
-#
-#Player can decode secret instructions.
-#
-#This creates alternate route.
-#
-#Mechanic:
-#
-#Player manually interprets audio
-#No UI explanation
-#Entirely optional
-#
-#Hidden directives:
-#
-#Don’t flag Subject 204
-#Reject all blue triangles
-#Reject everything after 3 bells
-#
-#Ignoring instructions:
-#
-#normal ending
-#
-#Following instructions:
-#
-#true ending route
 #7. Mistake / Cognitive Drift System
 #
 #Player allowed:
@@ -1546,3 +1474,6 @@
 		# make sure that hidden instructions are not overriding the rules for the days
 		# make sure the rules for the days are correct with plan
 		# perhaps inject every citizen is too much?
+		# make sure all the other apps are working
+		# make sure that morse codes are correctly working for all days
+		# 

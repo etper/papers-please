@@ -12,9 +12,15 @@ var needs_injection := false
 var compliance := 100
 
 func _ready():
+
 	randomize()
 
 	$RuleManager.set_day(current_day)
+
+	var brain_window = $UI/BrainScanPanel
+
+	brain_window.approve_pressed.connect(_on_approve_button_pressed)
+	brain_window.reject_pressed.connect(_on_reject_button_pressed)
 
 	current_citizen = generate_random_citizen()
 
@@ -47,7 +53,7 @@ func generate_random_citizen() -> Citizen:
 
 func display_citizen(citizen: Citizen):
 
-	var window = $UI/BrainScanWindow
+	var window = $UI/BrainScanPanel
 
 	window.get_node("CitizenIDLabel").text = citizen.citizen_id
 
@@ -141,13 +147,13 @@ func inject_drug():
 	current_citizen = generate_random_citizen()
 
 	display_citizen(current_citizen)
-	
-	$UI/BrainScanWindow.visible = true
+
+	$UI/BrainScanPanel.visible = true
 	$UI/InjectButton.visible = false
 
 func show_injection_ui():
 
-	$UI/BrainScanWindow.visible = false
+	$UI/BrainScanPanel.visible = false
 	$UI/InjectButton.visible = true
 
 func _on_inject_button_pressed() -> void:

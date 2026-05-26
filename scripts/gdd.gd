@@ -72,19 +72,6 @@
 	# GAMEPLAY
 	
 		#tasks
-#2. Daily Rule Changes
-#
-#Rules mutate each day.
-#
-#This creates uncertainty and tension.
-#
-#Examples:
-#
-#Day 1:
-#Anxiety > 40% rejected
-#Day 2:
-#Bell dreams forbidden
-#Blue triangle scans always rejected
 #Day 3:
 #Randomized forbidden emotions
 #Thresholds hidden partially
@@ -1585,3 +1572,5 @@
 	
 		# icons for dream symbols instead
 		# rules being different app than brain scan panel
+		# make sure that hidden instructions are not overriding the rules for the days
+		# make sure the rules for the days are correct with plan

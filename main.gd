@@ -6,9 +6,12 @@ var mistakes := 0
 var processed := 0
 var quota := 5
 
+var current_day := 1
 
 func _ready():
 	randomize()
+
+	$RuleManager.set_day(current_day)
 
 	current_citizen = generate_random_citizen()
 
@@ -59,9 +62,7 @@ func display_citizen(citizen: Citizen):
 		"Risk: " + str(citizen.risk_score)
 	
 	$UI/BrainScanPanel/RulesLabel.text = \
-	"RULES:\n" + \
-	"Anxiety > 40 = Reject\n" + \
-	"Bell Symbol = Reject"
+	$RuleManager.get_rules_text()
 
 func finish_case():
 

@@ -121,6 +121,10 @@ func finish_case():
 
 	processed += 1
 
+	needs_injection = true
+
+	update_queue_ui()
+
 	print("Processed: ", processed)
 
 	if mistakes >= 3:
@@ -131,7 +135,6 @@ func finish_case():
 		print("DAY COMPLETE")
 		return
 
-	needs_injection = true
 	show_injection_ui()
 
 func _on_approve_button_pressed():
@@ -191,6 +194,8 @@ func inject_drug():
 	print("COMPLIANCE RESTORED")
 
 	load_next_citizen()
+
+	update_queue_ui()
 
 	get_brain_window().visible = true
 	$UI/InjectButton.visible = false
@@ -302,16 +307,16 @@ func get_brain_window():
 
 func update_queue_ui():
 
-	var text = "QUEUE\n\n"
+	var visible_queue = citizen_queue.duplicate()
 
-	for citizen in citizen_queue:
-
-		text += citizen.citizen_id + "\n"
+	# only show current citizen if still being processed
+	if current_citizen and !needs_injection:
+		visible_queue.push_front(current_citizen)
 
 	var window = get_queue_window()
 
 	if window:
-		window.set_queue(citizen_queue)
+		window.set_queue(visible_queue)
 
 func show_finish_day_button():
 

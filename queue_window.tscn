@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dd1vx8dk8n04x"]
 
-[ext_resource type="Script" uid="uid://d1iv6ulphkfk5" path="res://queue_window.gd" id="1_ksnv8"]
+[ext_resource type="Script" uid="uid://d1iv6ulphkfk5" path="res://scripts/queue_window.gd" id="1_ksnv8"]
 
 [node name="QueueWindow" type="Window" unique_id=1538339635]
 oversampling_override = 1.0
-position = Vector2i(0, 36)
+size = Vector2i(320, 240)
 script = ExtResource("1_ksnv8")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=34166940]

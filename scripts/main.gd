@@ -28,11 +28,15 @@ func _ready():
 	
 	brain_window.hide()
 
+	var queue_window = get_queue_window()
+	
+	queue_window.hide()
+
 	brain_window.approve_pressed.connect(_on_approve_button_pressed)
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)
 
-	current_citizen = generate_random_citizen()
-	display_citizen(current_citizen)
+	generate_day_queue()
+	load_next_citizen()
 
 func generate_day_queue():
 
@@ -338,6 +342,13 @@ func get_queue_window():
 
 	queue_window = desktop.open_app(
 		preload("res://queue_window.tscn")
+	)
+
+	queue_window.citizen_selected.connect(
+		func(citizen):
+			current_citizen = citizen
+			display_citizen(citizen)
+			get_brain_window().show()
 	)
 
 	return queue_window

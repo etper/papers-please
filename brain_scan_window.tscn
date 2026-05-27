@@ -4,6 +4,8 @@
 
 [node name="BrainScanPanel" type="Window" unique_id=1739591962]
 oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(320, 240)
 script = ExtResource("1_ikkgd")
 
 [node name="CitizenIDLabel" type="Label" parent="." unique_id=488262268]

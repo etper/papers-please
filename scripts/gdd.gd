@@ -1,5 +1,7 @@
 #papers please but in theme of "Brain"
 
+
+	#game title: AUDITOR
 	#internal monologue at the start
 	#screen pitch black
 	#voice over
@@ -1314,3 +1316,7 @@
 		# make sure that quotas increase each day 5,10,15
 		# make sure finale is done right according to plot
 		# in the intro boot sequence it does not clear the pc lines correctly
+		# perhaps typing sfx could be nice in the boot intro sequence
+		# check out the gdd if everything is implemented (main menu sequences too)
+		# perhaps we could do random rules for each day
+		# same categories, but random values

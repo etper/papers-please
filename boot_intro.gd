@@ -114,22 +114,18 @@ func type_line(
 
 		await get_tree().create_timer(speed).timeout
 
-
-
 func blink_cursor() -> void:
 
-	while true:
-
-		cursor.visible = !cursor.visible
-
-		await get_tree().create_timer(0.5).timeout
+	return
 
 func update_cursor() -> void:
 
-	cursor.position = Vector2(
-		boot_text.position.x + 12,
-		boot_text.position.y + boot_text.size.y + 8
-	)
+	return
+
+	#cursor.position = Vector2(
+		#boot_text.position.x + 12,
+		#boot_text.position.y + boot_text.size.y + 8
+	#)
 
 func _input(event):
 

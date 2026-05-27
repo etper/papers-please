@@ -18,15 +18,19 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -0.5
-offset_right = 1152.0
-offset_bottom = 432.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.5
+offset_bottom = 496.0
 grow_horizontal = 2
 
 [node name="Cursor" type="Label" parent="." unique_id=25936596]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 232.0
+offset_top = 176.0
+offset_right = 272.0
+offset_bottom = 199.0
 text = "_"
 
 [node name="FadeRect" type="ColorRect" parent="." unique_id=150735473]

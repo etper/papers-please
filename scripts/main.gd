@@ -1,6 +1,7 @@
 extends Node2D
 
-var current_citizen: Citizen
+var citizen_queue: Array[Citizen] = []
+var current_citizen: Citizen = null
 
 var mistakes := 0
 var processed := 0
@@ -29,8 +30,37 @@ func _ready():
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)
 
 	current_citizen = generate_random_citizen()
-
 	display_citizen(current_citizen)
+
+func generate_day_queue():
+
+	citizen_queue.clear()
+
+	for i in range(quota):
+
+		var citizen = generate_random_citizen()
+
+		citizen_queue.append(citizen)
+	
+	update_queue_ui()
+
+func load_next_citizen():
+
+	if citizen_queue.is_empty():
+
+		current_citizen = null
+
+		show_finish_day_button()
+
+		get_brain_window().hide()
+
+		return
+
+	current_citizen = citizen_queue.pop_front()
+	
+	display_citizen(current_citizen)
+
+	update_queue_ui()
 
 func generate_random_citizen() -> Citizen:
 
@@ -154,9 +184,7 @@ func inject_drug():
 
 	print("COMPLIANCE RESTORED")
 
-	current_citizen = generate_random_citizen()
-
-	display_citizen(current_citizen)
+	load_next_citizen()
 
 	get_brain_window().visible = true
 	$UI/InjectButton.visible = false
@@ -265,3 +293,33 @@ func get_brain_window():
 	)
 
 	return brain_window
+
+func update_queue_ui():
+
+	var text = "QUEUE\n\n"
+
+	for citizen in citizen_queue:
+
+		text += citizen.citizen_id + "\n"
+
+	$UI/CitizenQueueLabel.text = text
+
+func show_finish_day_button():
+
+	$UI/FinishDayButton.visible = true
+
+func _on_finish_day_button_pressed():
+
+	current_day += 1
+
+	processed = 0
+
+	quota += 5
+
+	$RuleManager.set_day(current_day)
+
+	$UI/FinishDayButton.visible = false
+
+	generate_day_queue()
+
+	load_next_citizen()

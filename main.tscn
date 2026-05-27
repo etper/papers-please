@@ -16,20 +16,27 @@ script = ExtResource("1_ig7tw")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=571070807]
 
-[node name="InjectButton" type="Button" parent="UI" unique_id=1443240806]
-visible = false
-offset_left = 528.0
-offset_top = 520.0
-offset_right = 587.0
-offset_bottom = 551.0
-text = "INJECT"
-
 [node name="Background" type="ColorRect" parent="UI" unique_id=1318710454]
 offset_top = 1.0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.5686275, 0.5686275, 0.5647059, 1)
 metadata/_edit_lock_ = true
+
+[node name="InjectButton" type="Button" parent="UI" unique_id=1443240806]
+offset_left = 781.0
+offset_top = 479.0
+offset_right = 1114.0
+offset_bottom = 549.0
+text = "INJECT"
+
+[node name="FinishDayButton" type="Button" parent="UI" unique_id=70976882]
+visible = false
+offset_left = 791.0
+offset_top = 366.0
+offset_right = 1124.0
+offset_bottom = 436.0
+text = "FINISH DAY"
 
 [node name="TopPanel" type="ColorRect" parent="UI" unique_id=1477590453]
 offset_right = 1152.0
@@ -69,6 +76,18 @@ offset_left = 965.0
 offset_top = 568.0
 offset_right = 1153.0
 offset_bottom = 659.0
+theme_override_colors/font_color = Color(0.6784314, 0.76862746, 0.627451, 1)
+theme_override_fonts/font = ExtResource("3_1bvp3")
+theme_override_font_sizes/font_size = 39
+text = "09:17   "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CitizenQueueLabel" type="Label" parent="UI" unique_id=266056607]
+offset_left = 641.0
+offset_top = 66.0
+offset_right = 829.0
+offset_bottom = 157.0
 theme_override_colors/font_color = Color(0.6784314, 0.76862746, 0.627451, 1)
 theme_override_fonts/font = ExtResource("3_1bvp3")
 theme_override_font_sizes/font_size = 39
@@ -132,3 +151,4 @@ position = Vector2(830, -600)
 texture = ExtResource("5_lquwl")
 
 [connection signal="pressed" from="UI/InjectButton" to="." method="_on_inject_button_pressed"]
+[connection signal="pressed" from="UI/FinishDayButton" to="." method="_on_finish_day_button_pressed"]

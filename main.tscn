@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c7v1sj8d628aw" path="res://notes_window.tscn" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://5f4wfe4b0f8n" path="res://sprites/folder.png" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dd1vx8dk8n04x" path="res://queue_window.tscn" id="10_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cohauoywqquqm" path="res://sprites/book.png" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://dwmm6mst05glv" path="res://rules_window.tscn" id="12_w48qg"]
 
 [node name="Main" type="Node2D" unique_id=1909352608]
 script = ExtResource("1_ig7tw")
@@ -148,6 +150,23 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 app_scene = ExtResource("10_dg77c")
+app_name = ""
+
+[node name="Rules" parent="UI/Desktop/Icons" unique_id=467561907 instance=ExtResource("6_7mycd")]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 378.0
+offset_right = 145.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0.03137255, 0.03137255, 0.03137255, 1)
+theme_override_fonts/font = ExtResource("3_1bvp3")
+theme_override_font_sizes/font_size = 20
+text = "RULES"
+icon = ExtResource("11_ycdy4")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+app_scene = ExtResource("12_w48qg")
 app_name = ""
 
 [node name="RuleManager" type="Node" parent="." unique_id=320138722]

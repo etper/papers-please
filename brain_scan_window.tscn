@@ -5,7 +5,7 @@
 [node name="BrainScanPanel" type="Window" unique_id=1739591962]
 oversampling_override = 1.0
 position = Vector2i(0, 36)
-size = Vector2i(320, 240)
+size = Vector2i(320, 320)
 script = ExtResource("1_ikkgd")
 
 [node name="CitizenIDLabel" type="Label" parent="." unique_id=488262268]
@@ -45,6 +45,7 @@ offset_bottom = 255.0
 text = "Risk: 66"
 
 [node name="RulesLabel" type="Label" parent="." unique_id=80424585]
+visible = false
 offset_left = 320.0
 offset_right = 379.0
 offset_bottom = 23.0

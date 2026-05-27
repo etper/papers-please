@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwmm6mst05glv"]
+
+[ext_resource type="Script" uid="uid://b2l07domt4dq8" path="res://rules_window.gd" id="1_2hkuy"]
+
+[node name="RulesWindow" type="Window" unique_id=2019344019]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(320, 240)
+script = ExtResource("1_2hkuy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=825636742]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=652864098]
+layout_mode = 2

@@ -16,6 +16,8 @@ var brain_window: Window = null
 
 var queue_window: Window = null
 
+var rules_window: Window = null
+
 var cognitive_drift := false
 
 func _ready():
@@ -23,6 +25,10 @@ func _ready():
 	randomize()
 
 	$RuleManager.set_day(current_day)
+	
+	get_rules_window().set_rules(
+		$RuleManager.get_rules_text()
+)
 
 	var brain_window = get_brain_window()
 	
@@ -31,6 +37,10 @@ func _ready():
 	var queue_window = get_queue_window()
 	
 	queue_window.hide()
+	
+	var rules = get_rules_window()
+	
+	rules.hide()
 
 	brain_window.approve_pressed.connect(_on_approve_button_pressed)
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)
@@ -49,6 +59,7 @@ func generate_day_queue():
 		citizen_queue.append(citizen)
 	
 	update_queue_ui()
+	
 
 func load_next_citizen():
 
@@ -357,3 +368,16 @@ func get_queue_window():
 	)
 
 	return queue_window
+
+func get_rules_window():
+
+	if is_instance_valid(rules_window):
+		return rules_window
+
+	var desktop = $UI/Desktop
+
+	rules_window = desktop.open_app(
+		preload("res://rules_window.tscn")
+	)
+
+	return rules_window

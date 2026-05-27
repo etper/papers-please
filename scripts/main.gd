@@ -14,6 +14,8 @@ var compliance := 100
 
 var brain_window: Window = null
 
+var queue_window: Window = null
+
 var cognitive_drift := false
 
 func _ready():
@@ -302,7 +304,10 @@ func update_queue_ui():
 
 		text += citizen.citizen_id + "\n"
 
-	$UI/CitizenQueueLabel.text = text
+	var window = get_queue_window()
+
+	if window:
+		window.set_queue(citizen_queue)
 
 func show_finish_day_button():
 
@@ -323,3 +328,16 @@ func _on_finish_day_button_pressed():
 	generate_day_queue()
 
 	load_next_citizen()
+
+func get_queue_window():
+
+	if is_instance_valid(queue_window):
+		return queue_window
+
+	var desktop = $UI/Desktop
+
+	queue_window = desktop.open_app(
+		preload("res://queue_window.tscn")
+	)
+
+	return queue_window

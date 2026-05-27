@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://de70f7ja33lub"]
 
-[ext_resource type="Script" uid="uid://db05hnlf3gpyc" path="res://brain_scan_window.gd" id="1_ikkgd"]
+[ext_resource type="Script" uid="uid://db05hnlf3gpyc" path="res://scripts/brain_scan_window.gd" id="1_ikkgd"]
 
 [node name="BrainScanPanel" type="Window" unique_id=1739591962]
 oversampling_override = 1.0
-position = Vector2i(100, 100)
 script = ExtResource("1_ikkgd")
 
 [node name="CitizenIDLabel" type="Label" parent="." unique_id=488262268]

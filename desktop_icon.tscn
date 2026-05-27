@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c4qgoyvbpupt"]
+
+[ext_resource type="Script" uid="uid://c827p0rh8yb05" path="res://scripts/desktop_icon.gd" id="1_gliby"]
+
+[node name="DesktopIcon" type="Button" unique_id=629251021]
+script = ExtResource("1_gliby")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=162271826]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=2147164094]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

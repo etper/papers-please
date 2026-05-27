@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2nm6ga3jjhqp"]
 
 [ext_resource type="AudioStream" uid="uid://c23rb7c377i47" path="res://sfx/static.mp3" id="1_7xq1n"]
-[ext_resource type="Script" uid="uid://dw6vpx8sqriyw" path="res://morse_intro.gd" id="1_pmmf7"]
+[ext_resource type="Script" uid="uid://dw6vpx8sqriyw" path="res://scripts/morse_intro.gd" id="1_pmmf7"]
 [ext_resource type="AudioStream" uid="uid://cxa01lf53kwg" path="res://sfx/morse beep.mp3" id="2_pmmf7"]
 
 [node name="MorseIntro" type="Control" unique_id=1864525078]

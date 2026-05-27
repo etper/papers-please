@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5n6t8qhppx1i"]
 
-[ext_resource type="Script" uid="uid://c3x3vjvrv58j7" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c3x3vjvrv58j7" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bbxnoxo6n3t1o" path="res://scripts/rule_manager.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de70f7ja33lub" path="res://brain_scan_window.tscn" id="2_h2yge"]
 [ext_resource type="FontFile" uid="uid://bng2qoccis62v" path="res://fonts/Minecraft.ttf" id="3_1bvp3"]

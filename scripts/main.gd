@@ -22,6 +22,8 @@ func _ready():
 	$RuleManager.set_day(current_day)
 
 	var brain_window = get_brain_window()
+	
+	brain_window.hide()
 
 	brain_window.approve_pressed.connect(_on_approve_button_pressed)
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)

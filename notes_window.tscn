@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c7v1sj8d628aw"]
+
+[ext_resource type="Script" uid="uid://cytxsat51llpl" path="res://notes_window.gd" id="1_x4gok"]
+[ext_resource type="FontFile" uid="uid://bng2qoccis62v" path="res://fonts/Minecraft.ttf" id="2_wcnwx"]
+
+[node name="NotesWindow" type="Window" unique_id=1577417355]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+script = ExtResource("1_x4gok")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=940034959]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer" unique_id=1902373029]
+layout_mode = 2
+theme_override_colors/caret_color = Color(0.4, 0.50980395, 0.3372549, 1)
+theme_override_colors/font_color = Color(0.4, 0.50980395, 0.3372549, 1)
+theme_override_colors/background_color = Color(0.6784314, 0.76862746, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_wcnwx")
+theme_override_font_sizes/font_size = 20

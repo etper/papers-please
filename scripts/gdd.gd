@@ -1324,3 +1324,5 @@
 		# check out the gdd if everything is implemented (main menu sequences too)
 		# perhaps we could do random rules for each day
 		# same categories, but random values
+		# some jiggle jiggle to desktop icons clicking?
+		# limit how much they can resize the window, max

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c3x3vjvrv58j7" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bbxnoxo6n3t1o" path="res://scripts/rule_manager.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de70f7ja33lub" path="res://brain_scan_window.tscn" id="2_h2yge"]
+[ext_resource type="FontFile" uid="uid://bng2qoccis62v" path="res://fonts/Minecraft.ttf" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dr8iy5lm2u7ix" path="res://sprites/ui mockup.png" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1909352608]
 script = ExtResource("1_ig7tw")
@@ -10,6 +12,7 @@ script = ExtResource("1_ig7tw")
 [node name="UI" type="CanvasLayer" parent="." unique_id=571070807]
 
 [node name="BrainScanPanel" parent="UI" unique_id=1739591962 instance=ExtResource("2_h2yge")]
+visible = false
 
 [node name="InjectButton" type="Button" parent="UI" unique_id=1443240806]
 visible = false
@@ -19,7 +22,63 @@ offset_right = 587.0
 offset_bottom = 551.0
 text = "INJECT"
 
+[node name="Background" type="ColorRect" parent="UI" unique_id=1318710454]
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.5686275, 0.5686275, 0.5647059, 1)
+metadata/_edit_lock_ = true
+
+[node name="TopPanel" type="ColorRect" parent="UI" unique_id=1477590453]
+offset_right = 1152.0
+offset_bottom = 40.0
+color = Color(0.06666667, 0.07058824, 0.06666667, 1)
+metadata/_edit_lock_ = true
+
+[node name="BottomPanel" type="ColorRect" parent="UI" unique_id=1194483522]
+offset_top = 568.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.06666667, 0.07058824, 0.06666667, 1)
+metadata/_edit_lock_ = true
+
+[node name="OSLabel" type="Label" parent="UI" unique_id=531076617]
+offset_right = 214.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.6784314, 0.76862746, 0.627451, 1)
+theme_override_fonts/font = ExtResource("3_1bvp3")
+theme_override_font_sizes/font_size = 18
+text = "  MNEMOSYS"
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="UI" unique_id=1105201727]
+offset_left = 857.0
+offset_right = 1152.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.6784314, 0.76862746, 0.627451, 1)
+theme_override_fonts/font = ExtResource("3_1bvp3")
+theme_override_font_sizes/font_size = 18
+text = "FEBRUARY 31ST 1982  "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="UI" unique_id=238220877]
+offset_left = 965.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 659.0
+theme_override_colors/font_color = Color(0.6784314, 0.76862746, 0.627451, 1)
+theme_override_fonts/font = ExtResource("3_1bvp3")
+theme_override_font_sizes/font_size = 39
+text = "09:17   "
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="RuleManager" type="Node" parent="." unique_id=320138722]
 script = ExtResource("2_0xm2m")
+
+[node name="UiMockup" type="Sprite2D" parent="." unique_id=10479958]
+position = Vector2(830, -600)
+texture = ExtResource("5_lquwl")
 
 [connection signal="pressed" from="UI/InjectButton" to="." method="_on_inject_button_pressed"]

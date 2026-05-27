@@ -5,15 +5,16 @@
 [node name="DesktopIcon" type="Button" unique_id=629251021]
 offset_right = 159.0
 offset_bottom = 59.0
-text = "sex"
 script = ExtResource("1_gliby")
 
 [node name="Icon" type="TextureRect" parent="." unique_id=162271826]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 48.0
+offset_bottom = 108.0
 
 [node name="Label" type="Label" parent="." unique_id=2147164094]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 36.0
+offset_top = 59.0
+offset_right = 118.0
+offset_bottom = 82.0

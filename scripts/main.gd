@@ -11,6 +11,8 @@ var current_day := 1
 var needs_injection := false
 var compliance := 100
 
+var brain_window: Window = null
+
 var cognitive_drift := false
 
 func _ready():
@@ -19,7 +21,7 @@ func _ready():
 
 	$RuleManager.set_day(current_day)
 
-	var brain_window = $UI/Desktop/WindowLayer/BrainScanPanel
+	var brain_window = get_brain_window()
 
 	brain_window.approve_pressed.connect(_on_approve_button_pressed)
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)
@@ -55,7 +57,7 @@ func generate_random_citizen() -> Citizen:
 
 func display_citizen(citizen: Citizen):
 
-	var window = $UI/Desktop/WindowLayer/BrainScanPanel
+	var window = get_brain_window()
 
 	window.get_node("CitizenIDLabel").text = citizen.citizen_id
 
@@ -154,12 +156,12 @@ func inject_drug():
 
 	display_citizen(current_citizen)
 
-	$UI/BrainScanPanel.visible = true
+	get_brain_window().visible = true
 	$UI/InjectButton.visible = false
 
 func show_injection_ui():
 
-	$UI/BrainScanPanel.visible = false
+	get_brain_window().visible = false
 	$UI/InjectButton.visible = true
 
 func _on_inject_button_pressed() -> void:
@@ -179,7 +181,7 @@ func trigger_cognitive_drift():
 
 func disable_normal_ui():
 
-	$UI/BrainScanPanel.visible = false
+	get_brain_window().visible = false
 	$UI/InjectButton.visible = false
 
 func generate_self_audit() -> Citizen:
@@ -208,11 +210,11 @@ func start_self_audit():
 
 	display_citizen(current_citizen)
 
-	$UI/BrainScanPanel.visible = true
+	get_brain_window().visible = true
 
 func threat_confirmed():
 
-	$UI/BrainScanPanel.visible = false
+	get_brain_window().visible = false
 
 	print("THREAT CONFIRMED")
 
@@ -236,8 +238,28 @@ func restart_cycle():
 
 	display_citizen(current_citizen)
 
-	$UI/BrainScanPanel.visible = true
+	get_brain_window().visible = true
 
 func show_drift_popup():
 
 	print("AUDITOR COGNITIVE DRIFT DETECTED")
+
+func get_brain_window():
+
+	if is_instance_valid(brain_window):
+		return brain_window
+
+	var desktop = $UI/Desktop
+	brain_window = desktop.open_app(
+		preload("res://brain_scan_window.tscn")
+	)
+
+	brain_window.approve_pressed.connect(
+		_on_approve_button_pressed
+	)
+
+	brain_window.reject_pressed.connect(
+		_on_reject_button_pressed
+	)
+
+	return brain_window

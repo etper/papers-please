@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bng2qoccis62v" path="res://fonts/Minecraft.ttf" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://bsyprwuc1drev" path="res://scripts/window_manager.gd" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dr8iy5lm2u7ix" path="res://sprites/ui mockup.png" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://d4c44jmo6q7d2" path="res://sprites/brain.png" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c4qgoyvbpupt" path="res://desktop_icon.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=1909352608]
@@ -90,20 +89,11 @@ offset_bottom = 40.0
 
 [node name="BrainScan" parent="UI/Desktop/Icons" unique_id=629251021 instance=ExtResource("6_7mycd")]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 44.0
-offset_right = 147.0
-offset_bottom = 156.0
-theme_override_colors/font_color = Color(0.03137255, 0.03137255, 0.03137255, 1)
-theme_override_fonts/font = ExtResource("3_1bvp3")
-theme_override_font_sizes/font_size = 20
-text = "BRAIN SCAN"
-icon = ExtResource("6_5vw27")
-flat = true
-icon_alignment = 1
-vertical_icon_alignment = 0
+offset_left = 264.0
+offset_top = 160.0
+offset_right = 423.0
+offset_bottom = 219.0
 app_scene = ExtResource("2_h2yge")
-app_name = ""
 
 [node name="RuleManager" type="Node" parent="." unique_id=320138722]
 script = ExtResource("2_0xm2m")

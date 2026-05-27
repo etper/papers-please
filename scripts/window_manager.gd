@@ -3,12 +3,26 @@ extends Control
 @onready var window_layer = $WindowLayer
 
 var minimized_windows := []
+var app_windows := {}
 
 func open_app(scene: PackedScene):
 
 	if scene == null:
-		return
+		return null
 
+	# app already exists
+	if app_windows.has(scene):
+
+		var existing = app_windows[scene]
+
+		if is_instance_valid(existing):
+
+			existing.visible = true
+			existing.grab_focus()
+
+			return existing
+
+	# create new window
 	var window = scene.instantiate()
 
 	window_layer.add_child(window)
@@ -24,11 +38,15 @@ func open_app(scene: PackedScene):
 
 	connect_window_signals(window)
 
+	app_windows[scene] = window
+
+	return window
+
 func connect_window_signals(window: Window):
 
 	window.close_requested.connect(
 		func():
-			window.queue_free()
+			window.visible = false
 	)
 
 	window.visibility_changed.connect(

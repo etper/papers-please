@@ -19,7 +19,7 @@ func _ready():
 
 	$RuleManager.set_day(current_day)
 
-	var brain_window = $UI/BrainScanPanel
+	var brain_window = $UI/Desktop/WindowLayer/BrainScanPanel
 
 	brain_window.approve_pressed.connect(_on_approve_button_pressed)
 	brain_window.reject_pressed.connect(_on_reject_button_pressed)
@@ -55,7 +55,7 @@ func generate_random_citizen() -> Citizen:
 
 func display_citizen(citizen: Citizen):
 
-	var window = $UI/BrainScanPanel
+	var window = $UI/Desktop/WindowLayer/BrainScanPanel
 
 	window.get_node("CitizenIDLabel").text = citizen.citizen_id
 

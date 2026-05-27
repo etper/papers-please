@@ -4,15 +4,14 @@
 [ext_resource type="Script" uid="uid://bbxnoxo6n3t1o" path="res://scripts/rule_manager.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de70f7ja33lub" path="res://brain_scan_window.tscn" id="2_h2yge"]
 [ext_resource type="FontFile" uid="uid://bng2qoccis62v" path="res://fonts/Minecraft.ttf" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://bsyprwuc1drev" path="res://scripts/window_manager.gd" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dr8iy5lm2u7ix" path="res://sprites/ui mockup.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c4qgoyvbpupt" path="res://desktop_icon.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=1909352608]
 script = ExtResource("1_ig7tw")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=571070807]
-
-[node name="BrainScanPanel" parent="UI" unique_id=1739591962 instance=ExtResource("2_h2yge")]
-visible = false
 
 [node name="InjectButton" type="Button" parent="UI" unique_id=1443240806]
 visible = false
@@ -73,6 +72,31 @@ theme_override_font_sizes/font_size = 39
 text = "09:17   "
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Desktop" type="Control" parent="UI" unique_id=246553385 groups=["desktop"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_7mycd")
+
+[node name="WindowLayer" type="CanvasLayer" parent="UI/Desktop" unique_id=1860991642]
+
+[node name="BrainScanPanel" parent="UI/Desktop/WindowLayer" unique_id=1739591962 instance=ExtResource("2_h2yge")]
+visible = false
+
+[node name="Icons" type="Control" parent="UI/Desktop" unique_id=1445828575]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BrainScan" parent="UI/Desktop/Icons" unique_id=629251021 instance=ExtResource("6_7mycd")]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 160.0
+offset_right = 423.0
+offset_bottom = 219.0
+app_scene = ExtResource("2_h2yge")
 
 [node name="RuleManager" type="Node" parent="." unique_id=320138722]
 script = ExtResource("2_0xm2m")
